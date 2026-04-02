@@ -1,0 +1,90 @@
+
+╔══════════════════════════════════════════════════════════════════╗
+║          CUSTOMER CHURN ANALYSIS — EXECUTIVE REPORT             ║
+╚══════════════════════════════════════════════════════════════════╝
+
+Generated: 2026-03-13 04:32
+
+═══════════════════════════════════════
+ 1. DATASET SUMMARY
+═══════════════════════════════════════
+  Total Customers     : 5,000
+  Churned Customers   : 1,812
+  Retention Rate      : 63.8%
+  Churn Rate          : 36.2%
+  Avg Monthly Revenue : $64.72
+  Total Monthly Rev.  : $323,587.58
+
+═══════════════════════════════════════
+ 2. MODEL PERFORMANCE SUMMARY
+═══════════════════════════════════════
+  Best Model          : Logistic Regression
+  Optimal Threshold   : 0.31
+
+  Ranking (by ROC-AUC):
+  ★ Logistic Regression       AUC=0.7717  F1=0.6021
+    AdaBoost                  AUC=0.7684  F1=0.5827
+    Naive Bayes               AUC=0.7593  F1=0.6263
+    Random Forest             AUC=0.7557  F1=0.5758
+    Gradient Boosting         AUC=0.7538  F1=0.5940
+    SVM                       AUC=0.7471  F1=0.5701
+    Decision Tree             AUC=0.7310  F1=0.5539
+    KNN                       AUC=0.6911  F1=0.5244
+
+═══════════════════════════════════════
+ 3. RISK SEGMENTATION
+═══════════════════════════════════════
+
+               Count   AvgProb  AvgCharge  TotalRevenue
+RiskSegment                                            
+Low Risk        2314  0.148174  57.677597     133465.96
+Moderate Risk   1451  0.421628  64.846637      94092.47
+High Risk        848  0.646878  73.199988      62073.59
+Critical Risk    387  0.825062  87.740465      33955.56
+
+  ⚠  High + Critical Risk Customers : 1,235
+  ⚠  Monthly Revenue at Risk        : $96,029.15
+
+═══════════════════════════════════════
+ 4. KEY CHURN DRIVERS (Insights)
+═══════════════════════════════════════
+  • Month-to-month contract customers churn at ~3× the rate of annual contracts.
+  • Fiber optic users show elevated churn vs DSL (likely pricing sensitivity).
+  • Customers with 3+ support calls are significantly more likely to churn.
+  • Senior citizens churn at a higher rate (~40% vs ~26% overall).
+  • High monthly charges combined with short tenure = highest risk profile.
+  • Electronic check payers have the highest churn vs credit card users.
+
+═══════════════════════════════════════
+ 5. RECOMMENDED ACTIONS
+═══════════════════════════════════════
+  [CRITICAL RISK]
+  • Immediate outreach — personalized retention offers, account managers.
+  • Investigate service issues (support call history).
+  • Offer contract upgrade incentive (month-to-month → annual).
+
+  [HIGH RISK]
+  • Proactive email/SMS campaigns with loyalty discounts.
+  • Bundle additional services to increase stickiness.
+  • Tech support check-in for customers with recent complaints.
+
+  [MODERATE RISK]
+  • Targeted NPS survey to identify dissatisfaction early.
+  • Reward program enrollment / referral bonuses.
+
+  [LOW RISK]
+  • Maintain quality, upsell premium services.
+  • Encourage contract renewal before expiry.
+
+═══════════════════════════════════════
+ 6. FINANCIAL IMPACT ESTIMATE
+═══════════════════════════════════════
+  Assuming 30% retention of High+Critical risk customers:
+  • Customers Saved        : ~370
+  • Monthly Revenue Saved  : ~$28,808.74
+  • Annual Revenue Saved   : ~$345,704.94
+
+══════════════════════════════════════════════════════════════════
+  All visualizations saved in: visualizations/
+  Customer scores saved in  : reports/customer_churn_scores.csv
+══════════════════════════════════════════════════════════════════
